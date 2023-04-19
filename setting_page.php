@@ -43,7 +43,7 @@
         <br>
         <label for="option2">
             <input type="radio" name="alamatMahasiswa" id="option2" value="Option 2" <?php if($radioValue == "Option 2") echo "checked"; ?>>
-            Tida
+            Tidak
         </label>
 
         <p>IPK mahasiswa:</p>

@@ -25,11 +25,19 @@
     <!-- <p>this is a Setting page</p> -->
 
 
-    <?php
+<?php
+    // Set a default value for the radio button
+    $radioValue = "Option 2";
 
-        
-
-    ?>
+    // If the form was submitted, update the value of the radio button
+    if(isset($_POST['alamatMahasiswa'])) {
+        $radioValue = $_POST['alamatMahasiswa'];
+        setcookie('alamatMahasiswa', $radioValue, time() + (86400 * 30), "/");
+    } else if(isset($_COOKIE['alamatMahasiswa'])) {
+        // If the cookie is set, use its value for the radio button
+        $radioValue = $_COOKIE['alamatMahasiswa'];
+    }
+?>
 
     
     
@@ -73,7 +81,7 @@
 
     </form>
 
-    <script>
+    <!-- <script>
         var ipkMahasiswa = document.getElementsByName("ipkMahasiswa");
         ipkMahasiswa.addEventListener("input", function() {
 
@@ -90,7 +98,7 @@
 
         ipkMahasiswa.value = studentGPA;
     }
-    </script>
+    </script> -->
 
 
     <br><br>

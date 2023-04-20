@@ -33,11 +33,18 @@
 
     
     
-    <form id="settingForm" method="GET" action="setting_page_process.php">
+    <form id="settingForm" method="POST" >
 
         <p>Alamat mahasiswa apakah wajib isi:</p>
-        <input class="alignLeft" type="radio" name="alamatMahasiswa"  id="alamatMahasiswaYa" value="Ya" onkeyup=saveValue(this) ><label for="alamatWajibYa">Ya</label><br>
-        <input class="alignLeft" type="radio" name="alamatMahasiswa" id="alamatMahasiswaTidak" value="Tidak" checked="checked" onkeyup=saveValue(this) ><label for="alamatWajibTidak">Tidak</label><br><br>
+            <label for="option1">
+        <input type="radio" name="alamatMahasiswa" id="option1" value="Option 1" <?php if($radioValue == "Option 1") echo "checked"; ?>>
+        Ya
+        </label>
+        <br>
+        <label for="option2">
+            <input type="radio" name="alamatMahasiswa" id="option2" value="Option 2" <?php if($radioValue == "Option 2") echo "checked"; ?>>
+            Tidak
+        </label>
 
         <p>IPK mahasiswa:</p>
         <input type="text" name="ipkMahasiswa" id="ipkMhs" onkeyup=saveValue ><br><br>
